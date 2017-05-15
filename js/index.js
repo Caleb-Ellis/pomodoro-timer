@@ -5,11 +5,11 @@ $(document).ready(function() {
   var bMin = 5;
   var on = false;
   var paused = false;
-  
+
   // Set session and break timers
   $("#sessionTime").html(sMin + ":00");
   $("#breakTime").html(bMin + ":00");
-  
+
   // Initialise progress bar
   var bar = new ProgressBar.Circle(container, {
     color: '#fff',
@@ -36,15 +36,15 @@ $(document).ready(function() {
       }
     }
   });
-  
+
   // Set text style(couldn't get it to work in bar constructor)
-  bar.text.style.fontSize = '2rem';
-  
+  bar.text.style.fontSize = '2em';
+
   // Call progress bar intro animation
   bar.animate(1.0, {
     duration: 2000
   });
-  
+
   // Reset function - return to initial state (incl. intro animation)
   function reset() {
     on = false;
@@ -59,7 +59,7 @@ $(document).ready(function() {
       duration: 2000
     });
   }
-  
+
   // Four click functions change the session and break timers (+ or -). They have
   // been set such that they can't be changed while a timer is running
   $("#sessionMinus").click(function() {
@@ -90,12 +90,12 @@ $(document).ready(function() {
       $("#breakTime").html(bMin + ":00");
     }
   });
-  
+
   // If reset button clicked, restart app
   $("#resetBtn").click(function() {
     reset();
   });
-  
+
   // If play/start button clicked...
   $("#startBtn").click(function() {
     // Break progress bar function declaration. Animates anticlockwise.
@@ -140,7 +140,7 @@ $(document).ready(function() {
         brk(s, b)
       })
     };
-    
+
     // When session/break timer in action, the play button becomes a pause button
     $("#icon").toggleClass('fa-play fa-pause');
     // If a session has not yet been initialised, initialise it
